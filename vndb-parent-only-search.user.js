@@ -29,38 +29,6 @@ function makeButton(text, onclick, cssObj, id) {
   return button;
 }
 
-// these two don't work properly yet
-// function _substr(zero, one, two) {
-//   console.log({ zero }, { one }, { two });
-//   if (one + two <= zero.length) {
-//     return zero.substring(one, two);
-//   }
-//   return null;
-// }
-
-// function _dec_int(s, i) {
-//   const sb = _substr(s, i++, 1);
-//   console.log({ sb });
-//   const c1 = alpha[sb];
-//   console.log({ c1 });
-//   if (c1 < 49) {
-//     return c1;
-//   }
-
-//   let n = alpha[_substr(s, i++, 1)];
-
-//   if (c1 < 59) {
-//     return 49 + (c1 - 49) * 64 + n;
-//   }
-
-//   for (let index = 1; index < c1 - 59 + 1; index++) {
-//     n = n * 64 + alpha[_substr(s, i++, 1)];
-//   }
-
-//   const idk = [689, 4785, 266929, 17044145, 1090785969];
-//   return n + idk[c1 - 59];
-// }
-
 function r(zero, one) {
   const abc = zero > 1 ? r(zero - 1, Math.trunc(one / 64)) : '';
   return abc + alpha[one % 64];
