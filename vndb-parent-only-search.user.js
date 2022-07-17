@@ -2,11 +2,8 @@
 // @name        VNDB Parent-only Search
 // @match       https://vndb.org/i*
 // @match       https://vndb.org/g*
-// @version     0.1
+// @version     0.2
 // @author      mertvn
-// @grant       GM_openInTab
-// @grant       GM_getValue
-// @grant       GM_setValue
 // @run-at      document-idle
 // ==/UserScript==
 
@@ -74,7 +71,7 @@ function findChildTags(page) {
   console.log({ childTagIDs });
 
   let result = '';
-  result += `0${childTagIDs.length}`;
+  result += `0${_enc_int(childTagIDs.length)}`;
   for (let i = 0; i < childTagIDs.length; i++) {
     const childTagID = childTagIDs[i];
     const enc = _enc_int(childTagID);
